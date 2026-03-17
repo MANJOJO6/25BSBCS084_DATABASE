@@ -16,7 +16,7 @@ Step 3
 Your project already has a file called config.php that connects to the database. The default settings in this file use localhost as the host, root as the username, an empty password, and homeland_hospital as the database name. This matches the default XAMPP setup exactly, so in most cases nothing needs to be changed. However, if the person has set a password for their MySQL root account, they will need to open config.php and type that password into the $pass variable.
 
 Step 4 
-Now the project is ready to run. They open their browser and go to http://localhost/homeland_hospital/. The Homeland Hospital homepage should appear with options to log in as a patient or as a doctor.
+Now the project is ready to run. They open their browser and go to http://localhost/homeland/. The Homeland Hospital homepage should appear with options to log in as a patient or as a doctor.
 
 Step 5 
 To test as a patient, they click "Patient Login" and use any of the sample patient accounts. For example, they can type alice.johnson@example.com as the email and patient123 as the password. From the patient dashboard they can browse doctors, book appointments, view appointment history, and access the chat. To test as a doctor, they go back to the homepage, click "Doctor Login," and use any doctor account such as sarah.mitchell@homeland.com with the password doctor123. From the doctor dashboard they can view their schedule, manage patient appointments, and use the chat feature.
