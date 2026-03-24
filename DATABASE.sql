@@ -1,9 +1,11 @@
+CREATE DATABASE homeland_hospital;
+USE homeland_hospital;
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 16, 2026 at 06:48 PM
+-- Generation Time: Mar 23, 2026 at 07:51 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -114,7 +116,34 @@ INSERT INTO `patients` (`id`, `name`, `email`, `password`, `phone`, `created_at`
 (4, 'Daniel Brooks', 'daniel.brooks@example.com', 'patient123', '+1 (555) 201-1004', '2026-03-11 18:35:56'),
 (5, 'Elena Vasquez', 'elena.vasquez@example.com', 'patient123', '+1 (555) 201-1005', '2026-03-11 18:35:56'),
 (6, 'musisi genesis', 'musisigenesis@example.com', '$2y$10$eVQ9G0EOBRpqHEgwpZP.3uvT0mLodspwfRJgF81i.2IKYN4o4IpZi', '0749363828', '2026-03-11 21:59:32'),
-(7, 'mark joseph', 'joseph@gmail.com', '$2y$10$tW1gMzFL1Tv42GKkr9wicuHyenRJ0TST6cR7zLHAQhU7IpijNMdw.', '0754144827', '2026-03-12 12:03:47');
+(7, 'mark joseph', 'joseph@gmail.com', '$2y$10$tW1gMzFL1Tv42GKkr9wicuHyenRJ0TST6cR7zLHAQhU7IpijNMdw.', '0754144827', '2026-03-12 12:03:47'),
+(8, 'nakijoba malaika', 'nakijobamalaika@uinik.com', '$2y$10$.kbUeV07TAUvVhJJRiHj3Oy3vlYZ.SSK.rzkP8PMCjiz8S1ZsaN4e', '0700000000', '2026-03-17 13:10:33');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_content`
+--
+
+CREATE TABLE `tbl_content` (
+  `id` int(11) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `description` text NOT NULL,
+  `image_url` varchar(500) DEFAULT NULL,
+  `category` varchar(100) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `tbl_content`
+--
+
+INSERT INTO `tbl_content` (`id`, `title`, `description`, `image_url`, `category`, `created_at`) VALUES
+(1, 'Welcome to Homeland Hospital', 'Homeland Hospital is a leading healthcare provider committed to delivering compassionate and expert medical care to every patient who walks through our doors.', 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800&auto=format&fit=crop&q=70', 'General', '2026-03-21 18:08:11'),
+(2, 'Cardiology Department', 'Our Cardiology unit is equipped with the latest diagnostic tools and staffed by experienced heart specialists offering comprehensive cardiac screening and treatment.', 'https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&auto=format&fit=crop&q=70', 'Department', '2026-03-21 18:08:11'),
+(3, 'Pediatric Care Services', 'We provide gentle and child-friendly medical care for infants, children, and teenagers. Our pediatric team ensures every young patient feels safe and comfortable.', 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop&q=70', 'Department', '2026-03-21 18:08:11'),
+(4, 'Mental Health and Psychiatry', 'Homeland Hospital offers confidential mental health support including therapy, counselling, and psychiatric evaluation for patients of all ages.', 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&auto=format&fit=crop&q=70', 'Department', '2026-03-21 18:08:11'),
+(5, 'Book Your Appointment Today', 'Scheduling a visit with one of our doctors has never been easier. Log in to the patient portal, choose your preferred doctor and date, and confirm in minutes.', 'https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&auto=format&fit=crop&q=70', 'General', '2026-03-21 18:08:11');
 
 --
 -- Indexes for dumped tables
@@ -143,6 +172,12 @@ ALTER TABLE `patients`
   ADD UNIQUE KEY `uq_patient_email` (`email`);
 
 --
+-- Indexes for table `tbl_content`
+--
+ALTER TABLE `tbl_content`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -162,7 +197,13 @@ ALTER TABLE `doctors`
 -- AUTO_INCREMENT for table `patients`
 --
 ALTER TABLE `patients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `tbl_content`
+--
+ALTER TABLE `tbl_content`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
